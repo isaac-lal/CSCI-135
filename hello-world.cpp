@@ -1,10 +1,9 @@
-//Name: Isaac Lal
+// Name: Isaac Lal
 
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
     cout << "Hello World" << endl;
 
     return 0;
