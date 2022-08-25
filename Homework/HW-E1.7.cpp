@@ -12,9 +12,10 @@ your three best friends or favorite movies, on three separate lines.
 using namespace std;
 
 int main() {
-    cout << "Best friend #1: Sidrat" << endl;
-    cout << "Best friend #2: Dorothea" << endl;
-    cout << "Best friend #3: Coby" << endl;
+    // Favorite movies (All directed by Christopher Nolan btw)
+    cout << "Favorite Movie #1: Inception" << endl;
+    cout << "Favorite Movie #2: Interstellar" << endl;
+    cout << "Favorite Movie #3: The Dark Knight" << endl;
 
     return 0;
 }
