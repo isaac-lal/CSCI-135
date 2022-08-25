@@ -23,11 +23,11 @@ int main() {
     cin >> num3;
 
     // These if-statements calculate the smaller of the three numbers inputted
-    if(num1 < num2 && num2 < num3) {
+    if(num1 <= num2 && num1 <= num3) {
         cout << "The smaller of the three is " << num1 << endl;
-    } else if(num2 < num1 && num2 < num3) {
+    } else if(num2 <= num1 && num2 <= num3) {
         cout << "The smaller of the three is " << num2 << endl;
-    } else if(num3 < num1 && num3 < num2){
+    } else {
         cout << "The smaller of the three is " << num3 << endl;
     }
 

@@ -14,7 +14,7 @@ using namespace std;
 int main() {
     cout << "Best friend #1: Sidrat" << endl;
     cout << "Best friend #2: Dorothea" << endl;
-    cout << "Best friend #3: Max" << endl;
+    cout << "Best friend #3: Coby" << endl;
 
     return 0;
 }
