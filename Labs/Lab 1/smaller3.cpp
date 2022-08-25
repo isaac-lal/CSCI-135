@@ -27,7 +27,7 @@ int main() {
         cout << "The smaller of the three is " << num1 << endl;
     } else if(num2 < num1 && num2 < num3) {
         cout << "The smaller of the three is " << num2 << endl;
-    } else {
+    } else if(num3 < num1 && num3 < num2){
         cout << "The smaller of the three is " << num3 << endl;
     }
 

@@ -14,9 +14,11 @@ using namespace std;
 int main() {
     int year;
 
+    // Asks user to input a year
     cout << "Please enter a year number (1999, 2016, etc.): " << endl;
     cin >> year;
 
+    // Decides if the year is a common year or leap year
     if(year % 4 != 0) {
         cout << "Common year";
     } else if(year % 100 != 0) {

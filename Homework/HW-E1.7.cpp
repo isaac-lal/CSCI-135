@@ -12,5 +12,9 @@ your three best friends or favorite movies, on three separate lines.
 using namespace std;
 
 int main() {
-    cout << "Best "
+    cout << "Best friend #1: Sidrat" << endl;
+    cout << "Best friend #2: Dorothea" << endl;
+    cout << "Best friend #3: Max" << endl;
+
+    return 0;
 }
