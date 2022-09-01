@@ -34,6 +34,10 @@ int main() {
     fib[0] = 0;
     fib[1] = 1;
 
+    // output the first two values
+    cout << fib[0] << endl;
+    cout << fib[1] << endl;
+    
     // start loop at 2 since 0 and 1 are defined, up to 60
     for(int i = 2; i < 60; i++) {
         // fib[2] = fib[1] + fib[0] = 1

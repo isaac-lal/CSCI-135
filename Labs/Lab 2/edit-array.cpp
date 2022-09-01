@@ -30,7 +30,7 @@ int main() {
     // as long as index is within 0-9, program will run
     while(index >= 0 && index < 10) {
         // asks user to input an index and value
-        cout << "\n\nInput index (0-9): " << endl;
+        cout << "\n\nInput index: " << endl;
         cin >> index;
         cout << "Input value: " << endl;
         cin >> value;

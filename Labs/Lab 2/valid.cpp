@@ -20,21 +20,15 @@ int main() {
     cout << "Please input an integer in the range 0 < n < 100: " << endl;
     cin >> num;
 
-    int numSquared = num * num;
+    // if num isn't within the range, ask user to input until num is
+    while(num <= 0 || num >= 100) {
+        cout << "Please re-enter: " << endl;
+        cin >> num;
+    }
 
-    // if num is within the range, square it
+    // if num is within the range, square the number and output it
     if(num > 0 && num < 100) {
-        cout << "Number squared is " << numSquared << endl;
-    } else { // if outside range, execute loop again
-        while(num <= 0 || num >= 100) {
-            cout << "Please re-enter: " << endl;
-            cin >> num;
-
-            // repeat same process as above
-            if(num > 0 && num < 100) {
-                cout << "Number squared is " << numSquared << endl;
-            }
-        }
+        cout << "Number squared is " << num * num << endl;
     }
 
     return 0;
