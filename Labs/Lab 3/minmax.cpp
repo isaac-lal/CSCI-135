@@ -2,16 +2,19 @@
 Author: Isaac Lal
 Course: CSCI-135
 Instructor: Genady Maryash
-Assignment: Lab 3A
+Assignment: Lab 3B
 
-Write a program east-storage.cpp that asks the user to input a 
-string representing the date (in MM/DD/YYYY format), and prints 
-out the East basin storage on that day.
+Write a program minmax.cpp that finds the minimum and maximum storage in East basin in 2018.
 
-Example
-$ ./east-storage
-Enter date: 05/20/2018
-East basin storage: 80.96 billion gallons
+Example (using made up numbers):
+$ ./minmax
+minimum storage in East basin: 59.88 billion gallons
+MAXimum storage in East basin: 81.07 billion gallons
+
+Hint:
+The program should read the file line by line, while keeping track of what is the highest 
+and the lowest storage level in the basin so far. In the end, after reading the entire file, 
+the found values will be the minimum and the maximum storage levels for the entire year.
 */
 
 #include <iostream>
