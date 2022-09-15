@@ -4,6 +4,8 @@ Course: CSCI-135
 Instructor: Genady Maryash
 Assignment: Homework E3.1
 
+Positive or Zero or Negative
+
 Write a program that reads an integer 
 and prints whether it is negative, zero, or positive.
 */
