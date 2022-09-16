@@ -31,10 +31,9 @@ int main() {
     string junk;        // new string variable
     getline(fin, junk); // read one line from the file
 
-    string date;
+    string date, inputDate;
     double eastSt, eastEl, westSt, westEl;
 
-    string inputDate;
     cout << "Enter date (MM/DD/YYYY): " << endl;
     cin >> inputDate;
 

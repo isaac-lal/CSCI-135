@@ -37,10 +37,12 @@ int main() {
     string date;
     double eastSt, eastEl, westSt, westEl;
 
+    /* TASK A
     string inputDate;
     cout << "Enter date (MM/DD/YYYY): " << endl;
     cin >> inputDate;
-
+    */
+   
     while(fin >> date >> eastSt >> eastEl >> westSt >> westEl) { 
         // this loop reads the file line-by-line
         // extracting 5 values on each iteration 
@@ -51,10 +53,12 @@ int main() {
         // for example, to print the date and East basin storage:
         // cout << date << " " << eastSt << endl;
 
+        /* TASK A 
         if(date == inputDate) {
             getline(fin, date);
             cout << "East basin storage: " << eastSt << " billion gallons";
         }
+        */
     }  
 
     fin.close();
