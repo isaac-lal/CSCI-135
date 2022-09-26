@@ -26,7 +26,7 @@ using namespace std;
 int main() {
     ifstream fin("Current_Reservoir_Levels.tsv");
 
-    if (fin.fail()) {
+    if(fin.fail()) {
         cerr << "File cannot be opened for reading." << endl;
         exit(1); // exit if failed to open the file
     }
@@ -35,8 +35,8 @@ int main() {
     getline(fin, junk); // read one line from the file
 
     string date;
-    double eastSt, eastEl, westSt, westEl;
-   
+    double eastSt, eastEl, westSt, westEl, min = 999999999999999999, max = 0;
+    
     while(fin >> date >> eastSt >> eastEl >> westSt >> westEl) { 
         // this loop reads the file line-by-line
         // extracting 5 values on each iteration 
@@ -46,7 +46,18 @@ int main() {
 
         // for example, to print the date and East basin storage:
         // cout << date << " " << eastSt << endl;
+        
+        if(eastSt < min) {
+		    min = eastSt;
+        } 
+        
+        if(eastSt > max) {
+		    max = eastSt;
+        }
     }  
+
+    cout << "minimum storage in East basin: " << min << " billion gallons" << endl;
+    cout << "MAXimum storage in East basin: " << max << " billion gallons" << endl;
 
     fin.close();
 }
