@@ -2,9 +2,10 @@
 Author: Isaac Lal
 Course: CSCI-135
 Instructor: Genady Maryash
-Assignment: Project 1 - Task C
+Assignment: Project 1 - Task D
 
-Write a program maze_runner_modded.cpp that can stream in a maze and set up the array then take in directions to see if they can traverse the custom maze.
+Write a program maze_runner_modded.cpp that can stream in a maze and set up the array 
+then take in directions to see if they can traverse the custom maze.
 
 The format for the maze will be as follows, and will always be a 10x10 size array:
 
@@ -43,7 +44,8 @@ You are stuck in the maze.
 You got out of the maze.
 You are stuck in the maze.
 An additional note on how to test maze programs
-In addition to writing your formulas into files, remember that your program still accepts the input from the keyboard (Hey, do you see the benefit of input redirection? The program can work great on both keyboard and file inputs!)
+In addition to writing your formulas into files, remember that your program still accepts the input from the keyboard 
+(Hey, do you see the benefit of input redirection? The program can work great on both keyboard and file inputs!)
 
 When typing the input from the keyboard, the key combination Ctrl+D emulates the End-of-file situation, telling the program that the input has ended.
 
@@ -60,14 +62,25 @@ You are stuck in the maze.
 using namespace std;
 
 int main() {
-    int maze[6][6] = {
-        1,0,1,1,1,1,
-        1,0,0,0,1,1,
-        1,0,1,0,0,1,
-        1,0,1,0,1,1,
-        1,0,0,0,0,0,
-        1,1,1,1,1,1
-    };
+    int rows, cols;
+
+    cout << "Enter the amount of rows for the maze: ";
+    cin >> rows;
+    cout << "Enter the amount of columns for the maze: ";
+    cin >> cols;
+
+    int maze[10][10] {
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        0, 0, 1, 0, 0, 0, 1, 0, 0, 1,
+        1, 0, 1, 0, 1, 0, 1, 1, 0, 1,
+        1, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+        1, 1, 1, 0, 1, 1, 1, 0, 1, 1,
+        1, 1, 0, 0, 0, 1, 0, 0, 0, 1,
+        1, 1, 1, 1, 0, 0, 0, 1, 0, 1,
+        1, 0, 0, 0, 0, 1, 0, 1, 1, 1,
+        1, 0, 1, 1, 0 1 0 0 0 1
+        1 0 1 1 1 1 1 1 1 1
+    }
     int row = 0, col = 1, len;
     string directions;
 

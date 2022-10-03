@@ -10,7 +10,8 @@
       "chrono": "cpp",
       "istream": "cpp",
       "iosfwd": "cpp",
-      "ostream": "cpp"
+      "ostream": "cpp",
+      "__locale": "cpp"
     }
   }
 }
