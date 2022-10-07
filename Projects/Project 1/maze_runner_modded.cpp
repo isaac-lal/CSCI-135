@@ -62,49 +62,58 @@ You are stuck in the maze.
 using namespace std;
 
 int main() {
-    int rows, cols;
+    int maze[10][10];
+    int startRow, startCol, endRow, endCol, row, col;
 
-    cout << "Enter the amount of rows for the maze: ";
-    cin >> rows;
-    cout << "Enter the amount of columns for the maze: ";
-    cin >> cols;
-
-    int maze[10][10] {
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        0, 0, 1, 0, 0, 0, 1, 0, 0, 1,
-        1, 0, 1, 0, 1, 0, 1, 1, 0, 1,
-        1, 0, 0, 0, 1, 0, 0, 0, 0, 1,
-        1, 1, 1, 0, 1, 1, 1, 0, 1, 1,
-        1, 1, 0, 0, 0, 1, 0, 0, 0, 1,
-        1, 1, 1, 1, 0, 0, 0, 1, 0, 1,
-        1, 0, 0, 0, 0, 1, 0, 1, 1, 1,
-        1, 0, 1, 1, 0 1 0 0 0 1
-        1 0 1 1 1 1 1 1 1 1
+    // This loop creates the values of the CUSTOM maze
+    for(int r = 0; r < 10; r++) {
+        for(int c = 0; c < 10; c++) {
+            cin >> maze[r][c];
+        }
     }
-    int row = 0, col = 1, len;
+
+    // cin the inputs of the start of row and col + end of row and col
+    cin >> startRow >> startCol >> endRow >> endCol;
+    row = startRow; // make the value of row startRow
+    col = startCol; // same with col
+
     string directions;
+    while(directions != ";") {
+        cin >> directions;
+    }
 
-    while(cin >> directions) { // While the reading operation is a success
-        len = directions.length();
+    string s;
+    while(cin >> s) {
+        string arr[s.size()];
 
-        for(int i = 0; i < len; i++) {
-            char s = directions[i];
-
-            if(s == ';') {
-                if(row == 4 && col == 5) {
+        for(int i = 0; i < s.size(); i++) {
+            arr[i] = s[i];
+        }
+        
+        for(string i: arr) { //for each element in the array
+            if(i == ";") {
+                if(row == endRow && col == endCol) {
                     cout << "You got out of the maze." << endl;
                 } else {
                     cout << "You are stuck in the maze." << endl;
                 }
-            } else if(s == 'R' && (maze[row][col + 1] == 0 && col < 5)) {
+
+                row = startRow;
+                col = startCol;
+            }           
+
+            if(i == "R" && maze[row][col + 1] != 1) {
                 col++;
-            } else if(s == 'L' && (maze[row][col - 1] == 0 && col > 0)) {
+            } else if(i == "L" && maze[row][col - 1] != 1) {
                 col--;
-            } else if(s == 'U' && (maze[row - 1][col] == 0 && row > 0)) {
+            } else if(i == "U" && maze[row - 1][col] != 1) {
                 row--;
-            } else if(s == 'D' && (maze[row + 1][col] == 0 && row < 5)) {
+            } else if(i == "D" && maze[row + 1][col] != 1) {
                 row++;
+            } else {
+                row = row;
+                col = col;
             }
         }
     }
-} 
+}
