@@ -86,12 +86,11 @@ using namespace std;
 
 // TASK A
 bool isDivisibleBy(int n, int d) {
-    // checks if n is divisible by d 
-    if(d == 0) {
+    if(d == 0) { // checks if n is divisible by d 
         return false;
     }
 
-    if(n % d == 0) {
+    if(n % d == 0) { // if remainder is 0, it IS divisible
         return true;
     } else {
         return false;
@@ -100,12 +99,12 @@ bool isDivisibleBy(int n, int d) {
 
 // TASK B
 bool isPrime(int n) {
-    if(n < 2) {
+    if(n < 2) { // 1 is not a prime number as well as numbers below
         return false;
     }
 
-    for(int i = 2; i < n; i++) {
-        if(isDivisibleBy(n, i)) {
+    for(int i = 2; i < n; i++) { // dividing by the value of the for loop
+        if(isDivisibleBy(n, i)) { 
             return false;
         }
     }
@@ -117,7 +116,7 @@ bool isPrime(int n) {
 int nextPrime(int n) {
     int i = n + 1;
 
-    while( !(isPrime(i)) ) {
+    while( !(isPrime(i)) ) { // if i is NOT prime, increase i and check until next n is prime
         i++;
     }
 
@@ -126,24 +125,24 @@ int nextPrime(int n) {
 
 // TASK D
 int countPrimes(int a, int b) {
-    int numPrimes = 0;
+    int num = 0;
 
-    for(int i = a; i <= b; i++) {
-        if(isPrime(i)) {
-            numPrimes++;
+    for(int i = a; i <= b; i++) { // represents interval
+        if(isPrime(i)) { // checks if i is prime
+            num++; // if prime, increase by 1 and repeat for all primes in interval
         }
     }
 
-    return numPrimes;
+    return num;
 }
 
 // TASK E
 bool isTwinPrime(int n) {
-    if( !(isPrime(n)) ) {
+    if( !(isPrime(n)) ) { // if n is not prime, auto false
         return false;
     }
 
-    if(isPrime(n - 2) || isPrime(n + 2)) {
+    if(isPrime(n - 2) || isPrime(n + 2)) { // checks left and right side of n by 2 if either is prime
         return true;
     } else {
         return false;
@@ -154,7 +153,7 @@ bool isTwinPrime(int n) {
 int nextTwinPrime(int n) {
     int i = n + 1; // same logic as nextPrime
 
-    while( !(isTwinPrime(i)) ) {
+    while( !(isTwinPrime(i)) ) { // isTwinPrime instead of isPrime
         i++;
     }
 
@@ -163,93 +162,94 @@ int nextTwinPrime(int n) {
 
 // TASK G
 int largestTwinPrime(int a, int b) {
-    for(int i = b; i >= a; i--) { // reversed for loop
-        if(isTwinPrime(i)) {
+    for(int i = b; i >= a; i--) { // reversed for loop to check max first
+        if(isTwinPrime(i)) { // if max number is prime, return value
             return i;
-        } // defined function: isTwinPrime makes this task easy
+        } 
     }
 
-    return -1;
+    return -1; // if num is NOT within interval, return -1
 }
 
-int main() {
+int main() { // UNCOMMENT ON WHICH TASK YOU WANT TO RUN (replace * with a / next to "TASK")
     /* TASK A
-    int divide, divideBy;
+    int n, d;
 
-    cout << "Enter the number you want to divide: ";
-    cin >> divide;
-    cout << "Enter the number you want to divide by: ";
-    cin >> divideBy;
+    cout << "Enter number to divide: ";
+    cin >> n;
+    cout << "Enter number to divide by: ";
+    cin >> d;
     
-    if(isDivisibleBy(divide, divideBy) == 1) {
+    if(isDivisibleBy(n, d) == 1) {
         cout << "Yes";
     } else {
         cout << "No";
     }
-    */
+    /* */
 
     /* TASK B
-    int prime;
+    int n;
     
     cout << "Enter a number: ";
-    cin >> prime;
+    cin >> n;
 
-    if(isPrime(prime) == 1) {
+    if(isPrime(n) == 1) {
         cout << "Prime" << endl;
     } else {
         cout << "Not Prime" << endl;
     }
-    */ 
+    /* */
 
     /* TASK C
-    int next;
+    int n;
 
     cout << "Enter a number: ";
-    cin >> next;
+    cin >> n;
 
-    cout << nextPrime(next) << endl;
-    */
+    cout << nextPrime(n) << endl;
+    /* */
 
     /* TASK D
-    int count1, count2;
+    int a, b;
 
     cout << "Enter first number: ";
-    cin >> count1;
+    cin >> a;
     cout << "Enter second number: ";
-    cin >> count2;
+    cin >> b;
 
-    cout << countPrimes(count1, count2) << endl;
-    */
+    cout << countPrimes(a, b) << endl;
+    /* */
 
     /* TASK E
-    int num;
-
-    cout << "Enter a prime number: ";
-    cin >> num;
-
-    if(isTwinPrime(num) == 1) {
-        cout << "This number is a twin prime";
-    } else {
-        cout << "This number is NOT a twin prime";
-    }
-    */
-
-    /* TASK F
-    int nextTwin;
+    int n;
 
     cout << "Enter a number: ";
-    cin >> nextTwin;
+    cin >> n;
 
-    cout << nextTwinPrime(nextTwin) << endl;
-    */
+    if(isTwinPrime(n) == 1) {
+        cout << "Prime";
+    } else {
+        cout << "Not Prime";
+    }
+    /* */
+
+    /* TASK F
+    int n;
+
+    cout << "Enter a number: ";
+    cin >> n;
+
+    cout << nextTwinPrime(m) << endl;
+    /* */
 
     // TASK G
-    int twin1, twin2;
+    int a, b;
 
     cout << "Enter first number: ";
-    cin >> twin1;
+    cin >> a;
     cout << "Enter second number: ";
-    cin >> twin2;
+    cin >> b;
 
-    cout << largestTwinPrime(twin1, twin2) << endl;
+    cout << largestTwinPrime(a, b) << endl;
+    /* */
 }
