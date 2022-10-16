@@ -64,7 +64,7 @@ int main() {
         1,0,1,0,1,1,
         1,0,0,0,0,0,
         1,1,1,1,1,1
-    };
+    }; 
     int row = 0, col = 1;
 
     while(cin >> s) { // While the reading operation is a success
