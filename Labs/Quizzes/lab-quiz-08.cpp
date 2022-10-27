@@ -24,7 +24,7 @@ int unbalanced_brackets(string input) {
         if(input[i] == '{') {
             count++;
         } else if(input[i] == '}') {
-            count --;
+            count--;
         }
     }
 
