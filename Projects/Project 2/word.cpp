@@ -49,7 +49,6 @@ Well, thank you for listening. I appreciate you all :)
 NOTE: Each paragraph, even though the amount of lines changed, stayed as their own paragraphs.
 */
 
-// UNFINISHED, NOT COMPLETE
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -79,7 +78,6 @@ string lineSplit(string line, int width) {
     }
 
     return result;
-
 }
 
 string resultOutput(ifstream &readFile, int count) {
