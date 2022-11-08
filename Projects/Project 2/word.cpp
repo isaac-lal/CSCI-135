@@ -96,6 +96,8 @@ limited by my measily brain and only do one task at a time?
 
 TITLE 2                                                    
      Well, thank you for listening. I appreciate you all :)
+
+
 */
 
 #include <iostream>
@@ -189,6 +191,7 @@ void align(const string& input, string justify1, string justify2, int limit, str
     }
 }
 
+// I HAVE NO IDEA HOW TO DO PROJECT 2 TASK 2
 int main() {
     string fileName, header, justify1, justify2, output, text2;
     cout << "Enter the input filename: ";
