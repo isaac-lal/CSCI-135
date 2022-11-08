@@ -190,11 +190,12 @@ void align(const string& input, string justify1, string justify2, int limit, str
 }
 
 int main() {
-    string fileName;
+    string fileName, header, justify1, justify2, output, text2;
     cout << "Enter the input filename: ";
     cin >> fileName;
 
-    ifstream readFile;
+    int limit;
+    ifstream readFile, file;
     readFile.open(fileName);
 
     string firstLine;
@@ -205,6 +206,9 @@ int main() {
 
     string output = resultOutput(readFile, count);
     readFile.close();
+
+    text2 = trim(file, limit);
+    align(text2, justify1, justify2, limit, output);
 
     ofstream fileOut;
     fileOut.open(outputFile);
