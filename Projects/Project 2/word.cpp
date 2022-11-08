@@ -96,8 +96,6 @@ limited by my measily brain and only do one task at a time?
 
 TITLE 2                                                    
      Well, thank you for listening. I appreciate you all :)
-
-PLEASE NOTE THAT I HAVE NO IDEA HOW TO IMPLEMENT TASK 2
 */
 
 #include <iostream>
@@ -166,6 +164,29 @@ string resultOutput(ifstream &readFile, int count) {
     }
 
     return result;
+}
+
+void align(const string& input, string justify1, string justify2, int limit, string output) {
+    istringstream iss(input);
+    ofstream cout(output);
+
+    for(string line; getline(iss, line);) {
+        if(isupper(line[0]) && isupper(line[1])) {
+            if(justify2 == "right") {
+                cout.width(limit); 
+                cout << right << line << endl;
+            } else {
+                cout.width(limit); 
+                cout << left << line << endl;
+            }
+        } else if(justify1 == "right") {
+            cout.width(limit); 
+            cout << right << line << endl;
+        } else {
+            cout.width(limit); 
+            cout << left << line << endl;
+        }
+    }
 }
 
 int main() {
