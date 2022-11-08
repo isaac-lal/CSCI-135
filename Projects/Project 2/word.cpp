@@ -2,8 +2,9 @@
 Author: Isaac Lal
 Course: CSCI-135
 Instructor: Genady Maryash
-Assignment: Project 2, Task 1
+Assignment: Project 2 - Task 1, Task 2, Task 3
 
+TASK 1:
 The first task that you have to undertake is to set the width of the line for the new document. 
 To do this you must read from an input .txt document where the settings of the document will be indicated on the first line.
 
@@ -47,6 +48,56 @@ Exactly.
 Well, thank you for listening. I appreciate you all :)
 
 NOTE: Each paragraph, even though the amount of lines changed, stayed as their own paragraphs.
+
+
+TASK 2:
+Now we are given the task to add more functionality to our Word Application.
+
+First is that we will now look for headers and body. Basically, if a line is in all uppercase, 
+then it is a header/title/etc. The body is everything else. The significance will be explained after we discuss the next feature.
+
+We will now add the ability to justify our input, which will contain three types: right, left and center. 
+There will be two things you have to justify, the body and the headers.
+
+If the user does not pass a justification for the body, then it should be defaulted to left.
+
+If the user does not specify a justification for the headers, then it should be defaulted to whatever the body is justified to.
+
+To have a better understanding of this lets look back at our previous example on Task 1. Now our input will take one more argument 
+after the document size which will look something like this: 60;right;left;output.txt . This will indicate that the body of the document 
+will be justified to the right and the headers to the left.
+
+For example, our input.txt has:
+
+60;right;left;output.txt;
+WHAT IS LOREM IPSUM?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+Speaking of books, I love books. I read and write, sometimes at the same time because why not! Why should
+I be limited by my measily brain and only do one task at a time? Exactly.
+
+TITLE 2
+Well, thank you for listening. I appreciate you all :)
+Then it’s output.txt should look like:
+
+WHAT IS LOREM IPSUM?                                       
+       Lorem Ipsum is simply dummy text of the printing and
+  typesetting industry. Lorem Ipsum has been the industry's
+  standard dummy text ever since the 1500s, when an unknown
+   printer took a galley of type and scrambled it to make a
+                                        type specimen book.
+
+         Speaking of books, I love books. I read and write,
+sometimes at the same time because why not! Why should I be
+limited by my measily brain and only do one task at a time?
+                                                   Exactly.
+
+TITLE 2                                                    
+     Well, thank you for listening. I appreciate you all :)
+
+PLEASE NOTE THAT I HAVE NO IDEA HOW TO IMPLEMENT TASK 2
 */
 
 #include <iostream>
