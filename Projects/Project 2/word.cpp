@@ -98,6 +98,81 @@ TITLE 2
      Well, thank you for listening. I appreciate you all :)
 
 
+TASK 3:
+Now we have two more features that Microhard asked us to implement in the last minute and they are Double Space and Fill
+
+As all of our previous settings, they will be included in the first line of the input.txt file where it will look something like this: 60;right;left;true;true;output.txt;. Both these settings are boolean values which will indicate weather a document uses fill / double space. The first boolean statement within the line will indicate weather the document contains the fill settings or not, the second is for double spaced.
+
+By fill we mean filling up a line in the output before moving onto the next. For example, lets say the max width is 10 and the current line already has 5 characters. The next word that we are trying to fit is 10 characters long, we can only fit 3 characters of that word before moving the rest into the next line. ` Based on the given example, this line: Willy Strawberry
+Would become: Willy Str- aberry
+
+  
+- Double spaced means that between each line there should be an extra empty line. The crux is that for titles, there should also be an extra empty line before it as well so as to space it out even more. Check out the Tasks example below.  
+**Overall, the settings format should be:
+`max_width;justify_body;justify_headers;to_fill;double_spaced;output_filename;`**. 
+
+For example, our `input.txt` has:
+
+60;center;center;true;true;output.txt;
+
+WHAT IS LOREM IPSUM? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+Speaking of books, I love books. I read and write, sometimes at the same time because why not! Why should I be limited by my measily brain and only do one task at a time? Exactly.
+
+TITLE 2 Well, thank you for listening. I appreciate you all :)
+
+
+
+Would make the following `output.txt`:
+
+
+               WHAT IS LOREM IPSUM?                   
+Lorem Ipsum is simply dummy text of the printing and types-
+
+etting industry. Lorem Ipsum has been the industry’s stand-
+
+ard dummy text ever since the 1500s, when an unknown print-
+
+er took a galley of type and scrambled it to make a type s-
+
+pecimen book.
+
+Speaking of books, I love books. I read and write, sometim-
+
+es at the same time because why not! Why should I be limit-
+
+ed by my measily brain and only do one task at a time? Exa-
+
+ctly.
+
+                      TITLE 2                          
+Well, thank you for listening. I appreciate you all :)
+
+
+---  
+  
+Also, if you are getting random `NULL` objects in your output file, you can utilize the following function that we've made to clean it up.  
+  
+```c++
+/**
+ * @brief Removes NULL characters from the given string
+ * 
+ * @param line 
+ * @return std::string 
+ * 
+ * 
+std::string removeNullChars(std::string line) {
+
+    std::string null_less_line = "";
+
+    for(int i = 0; i < line.length(); i++) {
+        if(line[i] != '\0') {
+            null_less_line += line[i];
+        }
+    }
+
+    return null_less_line;
+}
 */
 
 #include <iostream>
@@ -168,6 +243,7 @@ string resultOutput(ifstream &readFile, int count) {
     return result;
 }
 
+/*
 void align(const string& input, string justify1, string justify2, int limit, string output) {
     istringstream iss(input);
     ofstream cout(output);
@@ -190,10 +266,12 @@ void align(const string& input, string justify1, string justify2, int limit, str
         }
     }
 }
+*/
 
 // I HAVE NO IDEA HOW TO DO PROJECT 2 TASK 2
+// I HAVE NO IDEA HOW TO DO PROJECT 2 TASK 3
 int main() {
-    string fileName, header, justify1, justify2, output, text2;
+    string fileName;
     cout << "Enter the input filename: ";
     cin >> fileName;
 
@@ -209,9 +287,6 @@ int main() {
 
     string output = resultOutput(readFile, count);
     readFile.close();
-
-    text2 = trim(file, limit);
-    align(text2, justify1, justify2, limit, output);
 
     ofstream fileOut;
     fileOut.open(outputFile);
