@@ -48,20 +48,18 @@ int main() {
     
     // Runs col for-loop for every value of row for-loop 
     for(int row = 0; row < height; row++) {
-        if(row % 2 == 0) { // condition to add a space in every other row for col
-            for(int col = 0; col < width; col++) {
-                if(col % 2 != 0) { // space if remainder is not 0
-                    cout << " ";
+        for(int col = 0; col < width; col++) {
+            if(row % 2 == 0) { // space if remainder is not 0
+                if(col % 2 == 0) { // if the column is even 
+                    cout << "*";
                 } else {
-                    cout << "*"; // Repeats until inputs are done
+                    cout << " "; // Repeats until inputs are done
                 }
-            }
-        } else { // standard, print * on first col
-            for(int col = 0; col < width; col++) {
-                if(col % 2 != 0) { // reverses the order
-                    cout << "*"; 
-                } else {
+            } else if(row % 2 != 0) { // condition to add a space in every other row for col
+                if(col % 2 == 0) {
                     cout << " ";
+                } else {
+                    cout << "*";
                 }
             }
         }
